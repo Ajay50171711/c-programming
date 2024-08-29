@@ -188,6 +188,84 @@ int main() {
     return 0;
 }
 
+       ---------------------------------3. Logical Operators----------------------------------
+These operators are used to perform logical operations and combine multiple conditions:
+
+&& : Logical AND (e.g., (a > b) && (b > c))
+|| : Logical OR (e.g., (a > b) || (b > c))
+! : Logical NOT (e.g., !(a > b))
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize variables
+    int a = 10;
+    int b = 5;
+    int c = 20;
+
+    // Perform logical operations
+    int and_result = (a > b) && (b < c);  // Logical AND
+    int or_result = (a > b) || (b > c);   // Logical OR
+    int not_result = !(a < b);            // Logical NOT
+
+    // Print the results
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("c = %d\n", c);
+
+    // Logical AND: Both conditions must be true
+    printf("Result of (a > b) && (b < c): %d\n", and_result); // Output will be 1 (true)
+
+    // Logical OR: At least one condition must be true
+    printf("Result of (a > b) || (b > c): %d\n", or_result);  // Output will be 1 (true)
+
+    // Logical NOT: Negates the result of the condition
+    printf("Result of !(a < b): %d\n", not_result);           // Output will be 1 (true)
+
+    return 0;
+}
+
+
+            ------------------4. Assignment Operators----------------         
+These operators are used to assign values to variables:
+
+= : Assignment (e.g., a = 5)
++= : Addition assignment (e.g., a += 5 which is equivalent to a = a + 5)
+-= : Subtraction assignment (e.g., a -= 5 which is equivalent to a = a - 5)
+*= : Multiplication assignment (e.g., a *= 5 which is equivalent to a = a * 5)
+/= : Division assignment (e.g., a /= 5 which is equivalent to a = a / 5)
+%= : Modulus assignment (e.g., a %= 5 which is equivalent to a = a % 5)
+
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize variables
+    int a = 10;
+ printf("The value of a is  = %d\n", a);
+    // Perform various assignment operations
+    a += 5;  // Equivalent to a = a + 5
+    printf("After a += 5, a = %d\n", a);
+
+    a -= 3;  // Equivalent to a = a - 3
+    printf("After a -= 3, a = %d\n", a);
+
+    a *= 2;  // Equivalent to a = a * 2
+    printf("After a *= 2, a = %d\n", a);
+
+    a /= 4;  // Equivalent to a = a / 4
+    printf("After a /= 4, a = %d\n", a);
+
+    a %= 3;  // Equivalent to a = a % 3
+    printf("After a %= 3, a = %d\n", a);
+
+    return 0;
+}
+
+
+
 
 
 
