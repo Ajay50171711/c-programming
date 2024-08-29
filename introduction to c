@@ -1,0 +1,26 @@
+C programming language was developed in 1972 by Dennis Ritchie at bell laboratories of AT&T (American Telephone & Telegraph), located in the U.S.A.
+Dennis Ritchie is known as the founder of the c language.
+It was developed to overcome the problems of previous languages such as B, BCPL, etc.
+
+-------------------------------------First c program-----------------------------------
+
+#include <stdio.h>    
+int main(){    
+printf("Hello C Language\n");    
+return 0;   
+}
+---------------------------
+#include <stdio.h>: 
+In this line, the program includes the standard input/output library (stdio.h) due to the preprocessor directive.
+For input and output tasks, the stdio.h library contains methods like printf and scanf function
+
+int main() { ... }:
+It is the main function which is the entry point of the C program. 
+The program starts executing from the beginning of the main function
+
+printf("Hello C Language\n");:
+Use the printf() function to print formatted output to the console. In this example, the string "Hello, C Language" is printed, followed by a newline character (n) which moves the pointer to the following line after the message is displayed
+
+
+
+
