@@ -21,6 +21,183 @@ The program starts executing from the beginning of the main function
 printf("Hello C Language\n");:
 Use the printf() function to print formatted output to the console. In this example, the string "Hello, C Language" is printed, followed by a newline character (n) which moves the pointer to the following line after the message is displayed
 
+return 0;
+When the return statement is 0, the program has been completed. When determining the state of a program, the operating system frequently uses the value returned by the main function. A return value of 0 often indicates that the execution was successful.
+
+--------------------------------variable and data types------------------------------------------------------
+Variables are named memory locations used to store data that can be modified during program execution.
+
+Rules for variable:
+Use lowercase letters, and if needed, use underscores to separate words (total_sum).
+Avoid single-letter names except for counters or indices.
+Variable names should not start with a digit and should not be keywords.
+
+-----------scope of variable:
+
+Local Variables: Declared within a function or a block. They are only accessible within that function or block.
+for example:
+void function() {
+    int localVar = 10; // localVar is a local variable
+}
+
+Global Variables: Declared outside of any function. They are accessible throughout the entire program.
+for example:
+int globalVar = 20; // globalVar is a global variable
+void function() {
+    // globalVar can be used here
+}
+----------------demonstrate it-----------------------------
+#include <stdio.h>
+
+// Global variable declaration
+int globalVar = 100;
+
+void display() {
+    // Local variable declaration
+    int localVar = 50;
+    // Printing the local variable
+    printf("Local variable: %d\n", localVar);
+    // Accessing the global variable
+    printf("Global variable accessed inside display(): %d\n", globalVar);
+}
+
+int main() {
+    // Local variable declaration in main()
+    int mainVar = 10;
+    
+    // Printing the local variable
+    printf("Local variable in main(): %d\n", mainVar);
+    
+    // Printing the global variable
+    printf("Global variable accessed inside main(): %d\n", globalVar);
+    
+    // Calling the display function
+    display();
+    return 0;
+}
+
+  ---------------------------------------------datatype in c--------------------------------------------------
+Data Types:
+
+The data type of a variable determines that what kind of data variable can hold. Common data types in C include:
+int (integer values)
+float (floating-point values)
+double (double-precision floating-point values)
+char (single characters)
+
+program to do--------------
+
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize an integer variable
+    int age = 25;
+    // Declare and initialize a float variable
+    float height = 5.9f;
+    // Declare and initialize a double variable
+    double pi = 3.141592653589793;
+    // Declare and initialize a char variable
+    char initial = 'A';
+    
+    // Print the values of the variables
+    printf("Integer variable (age): %d\n", age);
+    printf("Float variable (height): %.1f\n", height);
+    printf("Double variable (pi): %.15f\n", pi);
+    printf("Char variable (initial): %c\n", initial);
+    
+    return 0;
+}
+
+----------------------------------------operators in c---------------------------------------------------------
+Operators in C are special symbols that perform operations on variables and values
+Their are  different types of operators in C:
+
+-------1. Arithmetic Operators-------
+These operators are used to perform basic arithmetic operations:
+
++ : Addition (e.g., a + b)
+- : Subtraction (e.g., a - b)
+* : Multiplication (e.g., a * b)
+/ : Division (e.g., a / b)
+% : Modulus (remainder after division) (e.g., a % b)
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize variables
+    int a = 10;
+    int b = 3;
+
+    // Perform arithmetic operations
+    int sum = a + b;            // Addition
+    int difference = a - b;     // Subtraction
+    int product = a * b;        // Multiplication
+    int quotient = a / b;       // Division
+    int remainder = a % b;      // Modulus (remainder)
+
+    // Print the results
+    printf("The value of a: %d\n", a);
+    printf("The value of b: %d\n", b);
+    printf("Sum (a + b): %d\n", sum);
+    printf("Difference (a - b): %d\n", difference);
+    printf("Product (a * b): %d\n", product);
+    printf("Quotient (a / b): %d\n", quotient);
+    printf("Remainder (a % b): %d\n", remainder);  
+
+    return 0;
+}
+
+
+    -----------------------------2. Relational Operators---------------------------------------------
+These operators are used to compare two values and return a boolean result (true or false):
+
+== : Equal to (e.g., a == b)
+!= : Not equal to (e.g., a != b)
+> : Greater than (e.g., a > b)
+< : Less than (e.g., a < b)
+>= : Greater than or equal to (e.g., a >= b)
+<= : Less than or equal to (e.g., a <= b)
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize variables
+    int a = 10;
+    int b = 5;
+
+    // Perform relational operations
+    int equal = (a == b);        // Equal to
+    int not_equal = (a != b);    // Not equal to
+    int greater_than = (a > b); // Greater than
+    int less_than = (a < b);    // Less than
+    int greater_or_equal = (a >= b); // Greater than or equal to
+    int less_or_equal = (a <= b);    // Less than or equal to
+
+    // Print the results
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("a == b: %d\n", equal);           // Output will be 0 (false)
+    printf("a != b: %d\n", not_equal);       // Output will be 1 (true)
+    printf("a > b: %d\n", greater_than);    // Output will be 1 (true)
+    printf("a < b: %d\n", less_than);       // Output will be 0 (false)
+    printf("a >= b: %d\n", greater_or_equal); // Output will be 1 (true)
+    printf("a <= b: %d\n", less_or_equal);   // Output will be 0 (false)
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
