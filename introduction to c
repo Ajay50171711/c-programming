@@ -264,6 +264,94 @@ int main() {
     return 0;
 }
 
+        ---------------------------- 5. Increment and Decrement Operators------------------------
+These operators are used to increment or decrement the value of a variable by one:
+
+++ : Increment (e.g., a++ or ++a)
+-- : Decrement (e.g., a-- or --a)
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize variable
+    int a = 10;
+
+    // Demonstrate post-increment
+    printf("Initial value of a: %d\n", a);
+    printf("Post-increment (a++): %d\n", a++); // Value before increment
+    printf("Value of a after post-increment: %d\n", a); // Value after increment
+
+    // Demonstrate pre-increment
+    a = 10; // Reset value of a
+    printf("Value of a: %d\n", a);
+    printf("Pre-increment (++a): %d\n", ++a); // Value after increment
+    printf("Value of a after pre-increment: %d\n", a); // Value after increment
+
+    // Demonstrate post-decrement
+    a = 10; // Reset value of a
+    printf("Value of a: %d\n", a);
+    printf("Post-decrement (a--): %d\n", a--); // Value before decrement
+    printf("Value of a after post-decrement: %d\n", a); // Value after decrement
+
+    // Demonstrate pre-decrement
+    a = 10; // Reset value of a
+    printf("Value of a: %d\n", a);
+    printf("Pre-decrement (--a): %d\n", --a); // Value after decrement
+    printf("Value of a after pre-decrement: %d\n", a); // Value after decrement
+
+    return 0;
+}
+
+   --------------------------------------Bitwise Operators-------------------------------------------
+These operators perform bit-level operations:
+
+& : Bitwise AND (e.g., a & b)
+| : Bitwise OR (e.g., a | b)
+^ : Bitwise XOR (e.g., a ^ b)
+~ : Bitwise NOT (e.g., ~a)
+<< : Left shift (e.g., a << 2)
+>> : Right shift (e.g., a >> 2)
+
+Example:
+#include <stdio.h>
+//do it with free mind 
+int main() {
+    // Declare and initialize variables
+    int a = 60;   // Binary: 0011 1100
+    int b = 13;   // Binary: 0000 1101
+
+    // Perform bitwise operations
+    int bitwise_and = a & b;     // Bitwise AND
+    int bitwise_or = a | b;      // Bitwise OR
+    int bitwise_xor = a ^ b;     // Bitwise XOR
+    int bitwise_not_a = ~a;      // Bitwise NOT
+    int left_shift = a << 2;    // Left shift
+    int right_shift = a >> 2;   // Right shift
+
+    // Print the results
+    printf("a = %d (Binary: %08b)\n", a, a);
+    printf("b = %d (Binary: %08b)\n", b, b);
+    
+    printf("Bitwise AND (a & b): %d (Binary: %08b)\n", bitwise_and, bitwise_and);
+    printf("Bitwise OR (a | b): %d (Binary: %08b)\n", bitwise_or, bitwise_or);
+    printf("Bitwise XOR (a ^ b): %d (Binary: %08b)\n", bitwise_xor, bitwise_xor);
+    printf("Bitwise NOT (~a): %d (Binary: %08b)\n", bitwise_not_a, bitwise_not_a);
+    printf("Left Shift (a << 2): %d (Binary: %08b)\n", left_shift, left_shift);
+    printf("Right Shift (a >> 2): %d (Binary: %08b)\n", right_shift, right_shift);
+
+    return 0;
+}
+
+---------------------------------------ternary operator----------------------------------------------------
+shor form of if else statement 
+
+
+
+
+
+
+
 
 
 
