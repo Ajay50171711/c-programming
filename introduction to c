@@ -830,7 +830,175 @@ Declaration: int matrix[2][3]; declares a 2D array with 2 rows and 3 columns.
 Initialization: Elements are initialized row by row.
 Accessing Elements: You use two indices to access an element: matrix[row][column].
 
+2D array------3x3 matrix-----------------------------
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize a 3x3 array
+    int matrix[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    // Access and print the elements of the array
+    printf("3x3 Matrix:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
 ------------------------------------------------------------------String in c --------------------------------------------------------------------------------------
+
+What is a String in C?
+----------------------
+Definition: A string in C is an array of characters terminated by the null character \0. This null character indicates the end of the string.
+
+Fixed Size: Like other arrays, the size of a string in C is fixed when declared. However, the string's length (the number of characters) can be less than the array size, as long as the null character is present to indicate the end.
+
+Declaring and Initializing Strings
+You can declare and initialize strings in a few different ways:
+
+1)Using a Character Array:
+
+char str[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+Here, the string is explicitly terminated with a null character \0. The array has a size of 6 to accommodate the 5 characters and the null character.
+
+2)Using String Literals:
+
+char str[] = "Hello";
+This is the most common way to declare a string in C. The compiler automatically adds the null character \0 at the end. In this case, the array size is automatically determined based on the string length.
+---------------------------------------------------
+
+Accessing and Modifying Strings
+You can access individual characters in a string using array indexing, just like you would with an array of integers:
+
+#include <stdio.h>
+
+int main() {
+    char str[] = "Hello";
+
+    // Accessing characters
+    printf("First character: %c\n", str[0]);
+    printf("Last character: %c\n", str[4]);
+
+    // Modifying characters
+    str[0] = 'h';
+    printf("Modified string: %s\n", str);
+
+    return 0;
+}
+
+-------------------------------------------------------------------------------
+String Input and Output
+The most common way to handle strings in C is by using standard input and output functions, such as printf and scanf.
+------------------------------------------------------------
+Printing Strings: You can use printf with the %s format specifier to print a string:
+
+char str[] = "Hello, World!";
+printf("%s\n", str);  // Prints the string
+------------------------------------------------------------
+Reading Strings: To read a string from the user, you can use scanf. However, scanf stops reading input when it encounters a space, so it's better to use fgets for reading strings with spaces.
+
+for example 
+#include <stdio.h>
+
+int main() {
+    // Declare a character array to store the input string
+    char str[100];
+
+    // Prompt the user for input
+    printf("Enter a word (no spaces): ");
+
+    // Use scanf to read a string from the user
+    scanf("%s", str);
+
+    // Print the input string
+    printf("You entered: %s\n", str);
+
+    return 0;
+}
+if i enter the hii how are you then the outut will be a hii only
+----------------------------------------------------------------------------------------
+a simple program with fgets
+#include <stdio.h>
+
+int main() {
+    // Declare a character array to store the input string
+    char str[100];
+
+    // Prompt the user for input
+    printf("Enter a string (with spaces): ");
+
+    // Use fgets to read a string with spaces from the user
+    fgets(str, sizeof(str), stdin);
+
+    // Print the input string
+    printf("You entered: %s", str);
+
+    return 0;
+}
+here if i enter the  hii how are you then the outut will be a  hii how are you
+-------------------------------------------------------------------------------------------
+
+String Functions in C
+The C Standard Library provides several functions for handling strings, located in the <string.h> header file. Some of the most commonly used string functions are:
+
+1)strlen - Calculates the length of a string (excluding the null character):
+#include <string.h>
+int len = strlen(str);  // Returns the length of the string
+
+2)strcpy - Copies one string into another:
+char dest[20];
+strcpy(dest, str);  // Copies the content of str into dest
+
+3)strcat - Concatenates (appends) one string to the end of another:
+char str1[20] = "Hello, ";
+char str2[] = "World!";
+strcat(str1, str2);  // Appends str2 to str1
+
+4)strcmp - Compares two strings lexicographically (alphabetically):
+int result = strcmp(str1, str2);  // Compares str1 and str2
+// Returns 0 if they are equal, a positive value if str1 > str2, and a negative value if str1 < str2
+
+Here's an example that demonstrates various string operations:
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[20] = "Hello";
+    char str2[20];
+
+    // Copy str1 to str2
+    strcpy(str2, str1);
+    printf("After copying, str2: %s\n", str2);
+
+    // Concatenate str1 with " World"
+    strcat(str1, " World");
+    printf("After concatenation, str1: %s\n", str1);
+
+    // Get the length of str1
+    int length = strlen(str1);
+    printf("Length of str1: %d\n", length);
+
+    // Compare str1 and str2
+    int result = strcmp(str1, str2);
+    if (result == 0) {
+        printf("str1 and str2 are equal.\n");
+    } else {
+        printf("str1 and str2 are not equal.\n");
+    }
+
+    return 0;
+}
+
 
 
 
