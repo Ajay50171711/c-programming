@@ -999,6 +999,73 @@ int main() {
     return 0;
 }
 
+-------------------------------------------------------------------------pointer------------------------------------------------------------
+What is a Pointer?
+A pointer is a variable that stores the memory address of another variable.
+Instead of holding a direct value, a pointer "points" to a location in memory where the value is stored.
+
+Declaration of Pointers
+Pointers are declared using the * symbol. The syntax is:
+type *pointer_name;
+example:
+int *ptr;
+
+
+Assigning and Using Pointers
+Assigning an Address: You can assign the address of a variable to a pointer using the address-of operator (&):
+int num = 10;
+int *ptr = &num;
+Here, ptr stores the memory address of the variable num.
+
+Dereferencing a Pointer: You can access the value stored at the memory address by using the dereference operator (*):
+int value = *ptr;  // This gets the value at the address stored in ptr, which is 10
+Dereferencing allows you to read or modify the value at the memory address.
+
+Example: Basic Pointer Operations
+#include <stdio.h>
+
+int main() {
+    int num = 10;  // Declare an integer variable
+    int *ptr = &num;  // Declare a pointer and assign it the address of num
+
+    // Print the value of num using the pointer
+    printf("Value of num: %d\n", *ptr);
+
+    // Print the address of num
+    printf("Address of num: %p\n", (void*)&num);
+
+    // Print the value of the pointer (which is the address of num)
+    printf("Pointer ptr stores the address: %p\n", (void*)ptr);
+
+    // Modify the value of num through the pointer
+    *ptr = 20;
+    printf("New value of num: %d\n", num);
+
+    return 0;
+}
+
+example 2------------------------
+#include <stdio.h>
+
+int main() {
+    int arr[3] = {1, 2, 3};  // Initialize an array with 3 elements
+    int *ptr;
+    ptr= arr;    // Point to the first element of the array
+
+    // Print the value of the first element using the pointer
+    printf("%d\n", *ptr);    // Prints 1
+
+    // Move the pointer to the next element
+    ptr++;
+
+    // Print the value of the second element using the pointer
+    printf("%d\n", *ptr);    // Prints 2
+
+    return 0;
+}
+
+---------------------------------------------------------------------------structure-----------------------------------------------------------------------------
+
 
 
 
