@@ -1242,9 +1242,23 @@ or greater than the total size of all of its members.
                                                                              memory when only one member is used at a time.
 pieces of data simultaneously, with each member having its own memory
 
+     ----------------------------------------input/output& file handling---------------------------------------------
 
+Standard Input:
 
+scanf(): Formatted input.
+fgets(): Reading a line of text.
+Standard Output:
 
+printf(): Formatted output.
+File I/O:
+
+fopen(): Open a file.
+fprintf(): Write formatted data to a file.
+fscanf(): Read formatted data from a file.
+fgets(): Read a line from a file.
+fclose(): Close a file.
+Understanding these functions and their correct usage will allow you to effectively manage input and output in your C programs.
 
 
 
