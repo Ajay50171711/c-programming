@@ -1062,9 +1062,102 @@ int main() {
     printf("%d\n", *ptr);    // Prints 2
 
     return 0;
+---------------------------------------------------------------------structure-------------------------------------------------------------------
+
+structure:is a user-defined data type that groups together variables of different types under a single name.
+This is useful for organizing complex data in a program.
+
+To define a structure in C, you use the struct keyword followed by a name for the structure and a block of code enclosed in curly braces {}. Inside this block, you declare the variables that will be part of the structure, known as "members."
+
+Here is a basic example of how to define a structure:
+
+#include <stdio.h>
+#include <string.h>
+
+// Define a structure
+struct Person {
+    char name[50];
+    int age;
+    float height;
+};
+
+int main() {
+    // Declare a variable of data type struct Person
+    struct Person person1;
+
+    // Assign values to the members of person1
+    strcpy(person1.name, "Alice");                   
+          //if i write person1.name = "Alice" then it throw error because  Direct assignment like person1.name = "Alice"; is not valid for arrays. 
+    person1.age = 30;
+    person1.height = 5.5;
+
+    // Print the values of the members
+    printf("Name: %s\n", person1.name);
+    printf("Age: %d\n", person1.age);
+    printf("Height: %.2f\n", person1.height);
+
+    return 0;
 }
 
----------------------------------------------------------------------------structure-----------------------------------------------------------------------------
+Advantages of Using Structures
+1)Organization: Structures help group related variables together, making the program easier to understand and manage.
+2)Modularity: Structures can be used to create complex data types that can be passed to functions or returned from functions.
+3)Code Reusability: Once defined, structures can be reused to create multiple variables with the same format.
+
+Nested Structures:
+Structures can also be nested within other structures. For example:
+#include <stdio.h>
+#include <string.h> // Required for strcpy
+
+// Define a structure for storing address details
+struct Address {
+    char street[100];
+    char city[50];
+    char state[20];
+    int zip;
+};
+
+// Define a structure for storing person details
+struct Person {
+    char name[50];
+    int age;
+    float height;
+    struct Address address; // Nested structure
+};
+
+int main() {
+    // Declare and initialize a variable of type struct Person
+    struct Person person1;
+
+    // Assign values to the members of person1
+    strcpy(person1.name, "Bob");
+    person1.age = 25;
+    person1.height = 5.9;
+
+    // Assign values to the nested Address structure
+    strcpy(person1.address.street, "456 Maple Avenue");
+    strcpy(person1.address.city, "Springfield");
+    strcpy(person1.address.state, "IL");
+    person1.address.zip = 62704;
+
+    // Print the values of the members
+    printf("Name: %s\n", person1.name);
+    printf("Age: %d\n", person1.age);
+    printf("Height: %.2f\n", person1.height);
+    printf("Address:\n");
+    printf("  Street: %s\n", person1.address.street);
+    printf("  City: %s\n", person1.address.city);
+    printf("  State: %s\n", person1.address.state);
+    printf("  ZIP Code: %d\n", person1.address.zip);
+
+    return 0;
+}
+
+
+  -------------------------------------------------------union-----------------------------------------------------------------------------------
+
+
+
 
 
 
