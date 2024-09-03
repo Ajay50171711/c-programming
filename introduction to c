@@ -1155,6 +1155,95 @@ int main() {
 
 
   -------------------------------------------------------union-----------------------------------------------------------------------------------
+unions:A union in C is a special data structure that allows storing different data types in the same memory location. Unlike a struct, where each member has its own memory allocation, a union shares its memory among all its members. This means that only one member can hold a value at any given time 
+
+to define a union in C, you use the union keyword, followed by the union name and a block of member definitions.
+
+Here’s a basic example:  
+#include <stdio.h>
+#include <string.h> // Required for strcpy
+
+// Define a union
+union Data {
+    int intValue;
+    float floatValue;
+    char strValue[50];
+};
+
+int main() {
+    // Declare a variable of type union Data
+    union Data data;
+
+    // Assign values to the union members
+    data.intValue = 10;
+    printf("Integer value: %d\n", data.intValue);
+
+    // Assign a new value to another member
+    data.floatValue = 3.14;
+    printf("Float value: %f\n", data.floatValue);
+
+    // Assign a new value to yet another member
+    strcpy(data.strValue, "Hello, World!");
+    printf("String value: %s\n", data.strValue);
+
+    // Notice that the previous values (int and float) are overwritten
+    printf("After assigning string:\n");
+    printf("Integer value: %d\n", data.intValue); // Undefined behavior it will give any garbage value
+    printf("Float value: %f\n", data.floatValue); // Undefined behavior it will give any garbage value
+    printf("String value: %s\n", data.strValue);
+
+    return 0;
+
+
+
+1. Memory Allocation
+
+Structure:
+Each member of a structure is allocated its own memory.
+The total size of a structure is the sum of the sizes of its members, plus any padding added for alignment purposes.
+
+struct Person {
+    char name[50]; // 50 bytes
+    int age;       // 4 bytes (assuming typical size)
+    float height;  // 4 bytes (assuming typical size)
+};
+// Total size = 50 + 4 + 4 = 58 bytes (plus padding if necessary)
+-------------------------------------------------------------------------------------------------
+Union:
+All members of a union share the same memory location.
+The total size of a union is equal to the size of its largest member.
+
+union Data {
+    int intValue;   // 4 bytes
+    float floatValue; // 4 bytes
+    char strValue[50]; // 50 bytes
+};
+// Total size = size of largest member = 50 bytes
+----------------------------------------------------------------------------------------
+
+
+
+
+                                             Difference between C Structure and C Union
+
+                Structure	                                                                       Union
+1)The size of the structure is equal to                                   1) The size of the union is the size of its largest member
+or greater than the total size of all of its members. 
+
+2)The structure can contain data in multiple members at the same time.     2) Only one member can contain data at the same time.
+
+3)All members can be accessed and used simultaneously.                     3)Only one member can hold a value at any given time. 
+  Each member has its own storage space                                      Writing to one member overwrites the others.
+
+4)It is declared using the struct keyword.	                               4) It is declared using the union keyword
+
+5)Structures are useful when you need to keep and access multiple          5)Unions are useful when you need to store different data types
+                                                                             in the same location, but only one at a time, and can save 
+                                                                             memory when only one member is used at a time.
+pieces of data simultaneously, with each member having its own memory
+
+
+
 
 
 
