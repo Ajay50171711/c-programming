@@ -7,7 +7,7 @@ It was developed to overcome the problems of previous languages such as B, BCPL,
 #include <stdio.h>    
 int main(){    
 printf("Hello C Language\n");    
-return 0;   
+return 0;  
 }
 ---------------------------
 #include <stdio.h>: 
