@@ -1032,10 +1032,10 @@ int main() {
     printf("Value of num: %d\n", *ptr);
 
     // Print the address of num
-    printf("Address of num: %p\n", (void*)&num);
+    printf("Address of num: %p\n", &num);
 
     // Print the value of the pointer (which is the address of num)
-    printf("Pointer ptr stores the address: %p\n", (void*)ptr);
+    printf("Pointer ptr stores the address: %p\n", ptr);
 
     // Modify the value of num through the pointer
     *ptr = 20;
@@ -1062,6 +1062,16 @@ int main() {
     printf("%d\n", *ptr);    // Prints 2
 
     return 0;
+
+example 3----------
+#include <stdio.h>
+int main() {
+    int arr[] = {10, 20, 30, 40};
+    int *ptr = arr;
+    printf("%d", *(ptr + 2));
+    return 0;
+}
+
 ---------------------------------------------------------------------structure-------------------------------------------------------------------
 
 structure:is a user-defined data type that groups together variables of different types under a single name.
@@ -1152,6 +1162,26 @@ int main() {
 
     return 0;
 }
+
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int age;
+    float marks;
+};
+
+int main() {
+    struct Student s1 = {"John", 20, 85.5};
+    struct Student *ptr = &s1;
+
+    printf("Name: %s\n", ptr->name);
+    printf("Age: %d\n", ptr->age);
+    printf("Marks: %.2f\n", ptr->marks);
+
+    return 0;
+}
+
 
 
   -------------------------------------------------------union-----------------------------------------------------------------------------------
