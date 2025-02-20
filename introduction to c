@@ -1291,6 +1291,115 @@ fclose(): Close a file.
 Understanding these functions and their correct usage will allow you to effectively manage input and output in your C programs.
 
 EXAMPLE:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *fp = NULL;
+    char ch = 'j';
+    
+    fp = fopen("ab.txt", "w");  // Store the file pointer
+    if(fp == NULL) {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+    
+    fputc(ch, fp);
+    fclose(fp);
+    
+    return 0;
+}
+----------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+int main() {
+    FILE *fp = NULL;
+    char str[50];
+    int i;
+    
+    fp = fopen("ab.txt", "w");  // Store the file pointer
+    if(fp == NULL) {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+    printf("enter the string");
+    gets(str);
+    
+    for(i=0;i!=strlen(str);i++)
+     fputc(str[i], fp);
+    fclose(fp);
+    
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+int main() {
+    FILE *fp = NULL;
+    char str[50];
+    int i;
+    
+    fp = fopen("ab.txt", "w");  // Store the file pointer
+    if(fp == NULL) {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+    printf("enter the string");
+    gets(str);
+    
+    fputs(str,fp);
+    
+//    for(i=0;i!=strlen(str);i++)
+//     fputc(str[i], fp);
+    fclose(fp);
+    
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+int main() {
+    FILE *fp = NULL;
+    int a = 10;
+    char ch = 's';
+    char str[50];
+    int i;
+    
+    fp = fopen("ab.txt", "w");  // Store the file pointer
+    if(fp == NULL) {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+    printf("enter the string");
+    gets(str);
+    
+    fprintf(fp,"%d %s %c",a,str,ch);
+    
+//    fputs(str,fp);
+    
+//    for(i=0;i!=strlen(str);i++)
+//     fputc(str[i], fp);
+    fclose(fp);
+    
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 #include <stdio.h>
 int main() {
