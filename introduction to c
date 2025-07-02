@@ -1490,48 +1490,88 @@ int main() {
     return 0;
 }
 ----------------------------------------------------------------------------------------------------------------
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int main() {
+//    FILE *fp;
+//
+//    // Open the file in write mode. Creates file if it doesn't exist.
+//    // WARNING: This will overwrite if file already exists!
+//    fp = fopen("myfile.txt", "w");
+//
+//    if (fp == NULL) {
+//        printf("? Failed to create file.\n");
+//        return 1;
+//    }
+//
+//    printf("? File 'myfile.txt' created successfully.\n");
+//
+//    // Close the file
+//    fclose(fp);
+//
+//    return 0;
+//}
 
-int main() {
-    FILE *fp = NULL;
-    char readStr[100];
-    char writeStr[100];
-    
-    // Open file in r+ mode - file must exist
-    fp = fopen("ab.txt", "r+");
-    
-    if(fp == NULL) {
-        printf("Error opening file! Make sure file exists.\n");
-        exit(1);
-    }
-    
-    // First read the current content
-    printf("Current file content:\n");
-    while(fgets(readStr, sizeof(readStr), fp) != NULL) {
-        printf("%s", readStr);
-    }
-    
-    // Move file pointer to specific position (here at end)
-    fseek(fp, 0, SEEK_END);
-    
-    // Write new content
-    printf("\nEnter text to write at current position: ");
-    gets(writeStr);
-    fputs(writeStr, fp);
-    
-    // Move back to start to read updated content
-    rewind(fp);  // Same as fseek(fp, 0, SEEK_SET)
-    
-    printf("\nUpdated file content:\n");
-    while(fgets(readStr, sizeof(readStr), fp) != NULL) {
-        printf("%s", readStr);
-    }
-    
-    fclose(fp);
-    return 0;
-}
+
+//
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int main() {
+//    FILE *fp;
+//
+//    // Open file in append mode to preserve existing contents
+//    // Use "w" if you want to overwrite the file
+//    fp = fopen("myfile.txt", "a");
+//
+//    if (fp == NULL) {
+//        printf("? Failed to open file for writing.\n");
+//        return 1;
+//    }
+//
+//    // Write a message to the file
+//    fprintf(fp, "Hello, this is a line written to the file.\n");
+//    fprintf(fp, "You can write more lines using fprint.\n");
+//
+//    printf("? Text written to 'myfile.txt' successfully.\n");
+//
+//    // Close the file
+//    fclose(fp);
+//
+//    return 0;
+//}
+
+
+//
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int main() {
+//    FILE *fp;
+//    char ch;
+//
+//    // Open file in read mode
+//    fp = fopen("myfile.txt", "r");
+//
+//    if (fp == NULL) {
+//        printf("? Failed to open file for reading.\n");
+//        return 1;
+//    }
+//
+//    printf("?? Contents of 'myfile.txt':\n\n");
+//
+//    // Read and print character by character
+//    while ((ch = fgetc(fp)) != EOF) {
+//        putchar(ch);
+//    }
+//
+//    // Close the file
+//    fclose(fp);
+//
+//    return 0;
+//}
+
 
 
 
